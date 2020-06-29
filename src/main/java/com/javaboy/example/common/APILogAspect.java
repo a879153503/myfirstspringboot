@@ -45,7 +45,7 @@ public class APILogAspect {
     }
     //环绕增强
     @Around("apiLog()")
-    public void doAround(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("@Around：执行目标方法之前...");
         //访问目标方法的参数：
 //        Object[] args = joinPoint.getArgs();
@@ -57,5 +57,8 @@ public class APILogAspect {
         System.out.println("@Around：执行目标方法之后...");
         System.out.println("@Around：被织入的目标对象为：" + joinPoint.getTarget());
         System.out.println("原返回值：" + returnValue + "，这是返回结果的后缀");
+        //如果选择在环绕增强
+        //不然请求完接口后返回信息为空
+        return returnValue;
     }
 }
