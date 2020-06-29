@@ -1,5 +1,6 @@
 package com.javaboy.example.fileupload;
 
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
@@ -23,10 +24,15 @@ public class MyCustomExecption {
 
     @ExceptionHandler(MaxUploadSizeExceededException.class)
     public ModelAndView myException(MaxUploadSizeExceededException e) throws IOException {
-
         ModelAndView mv = new ModelAndView("myerror");
         mv.addObject("error","上传文件大小超出限制");
+        return mv;
+    }
 
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public ModelAndView MethodNotSupportedException(HttpRequestMethodNotSupportedException e) throws IOException {
+        ModelAndView mv = new ModelAndView("myerror");
+        mv.addObject("error",e.getMessage());
         return mv;
     }
 }
