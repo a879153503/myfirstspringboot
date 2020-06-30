@@ -1,4 +1,4 @@
-package com.javaboy.example;
+package com.javaboy.example.api;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/api")
-public class apiController {
+public class ApiController {
 
     @ResponseBody
     @PostMapping("/getInfo")

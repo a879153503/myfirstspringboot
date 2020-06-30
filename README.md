@@ -13,3 +13,10 @@ springboot+vue的前后端分离模式
 2. redis
 3. Spring Security
 等等等。。。。
+
+
+###2020/06/30
+1. 本次上传了获取根据指定参数获取token，存到redis 设置有效期两小时等。。。
+2. 自定义了接口拦截器 在>>>>>>WebMvcConfiguration
+3. 自定义了一个注解@NotRepeatSubmit
+4. 上传了几个工具类在util包下

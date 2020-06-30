@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class APILogAspect {
 
     //定义切点
-    @Pointcut("execution(public * com.javaboy.example.apiController.*(..))")
+    @Pointcut("execution(public * com.javaboy.example.api.ApiController.*(..))")
     public void apiLog() {
     }
 

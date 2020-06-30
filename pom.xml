@@ -40,6 +40,25 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.72</version>
         </dependency>
+        <!--redis依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--jedis操作对象-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!--lombok用于简化代码 有一些基本使用 自动构造@Data get、set、toString
+        @AllArgsConstructor 使用后添加一个构造函数，该构造函数含有所有已声明字段属性参数-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
         <!--springboot单元测试依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
