@@ -40,6 +40,7 @@ public class TokenController {
     @NotRepeatSubmit
     @PostMapping("api_token")
     public ApiResponse<AccessToken> apiToken(@RequestHeader("appId")String appId, @RequestHeader("timestamp") String timestamp, @RequestHeader("sign") String sign) {
+        //Assert :断言机制:测试代码或者调试程序时，总会做出一些假设，断言就是用于在代码中捕捉这些假设。当要判断一个方法传入的参数时，我们就可以使用断言。
         Assert.isTrue(!StringUtils.isEmpty(appId) && !StringUtils.isEmpty(timestamp) && !StringUtils.isEmpty(sign), "参数错误");
 
         long reqeustInterval = System.currentTimeMillis() - Long.valueOf(timestamp);
