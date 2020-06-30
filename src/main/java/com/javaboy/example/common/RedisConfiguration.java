@@ -20,6 +20,9 @@ public class RedisConfiguration {
 
     /**
      * 支持存储对象
+     * 如果只是单纯存储一些字符串可以使用StringRedisTemplate
+     * RedisTemplate默认使用JDK的序列化策略
+     * 更改默认的序列化策略使之可以成功把java对象序列化成字符串保存
      * @return
      */
     @Bean
