@@ -84,6 +84,17 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.0</version>
         </dependency>
+        <!--spring-cache-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <!--hutool的超级工具类-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.1.0</version>
+        </dependency>
 
         <!--springboot单元测试依赖-->
         <dependency>
