@@ -2,6 +2,7 @@ package com.javaboy.example;
 
 import com.javaboy.example.mapper.UserMapper;
 import com.javaboy.example.pojo.User;
+import com.javaboy.example.service.CacheService;
 import com.javaboy.example.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @SpringBootTest
-class ExampleApplicationTests {
+public class ExampleApplicationTests {
 
 //    @Autowired
 //    UserService userService;
@@ -25,9 +26,11 @@ class ExampleApplicationTests {
 //
 //    @Resource(name = "jdbcTemplateTwo")
 //    JdbcTemplate jdbcTemplateTwo;
-
     @Autowired
-    UserMapper userMapper;
+    CacheService cacheService;
+
+//    @Autowired
+//    UserMapper userMapper;
 
     @Test
     void contextLoads() {
@@ -78,7 +81,21 @@ class ExampleApplicationTests {
 
     @Test
     public void test6(){
-        List<User> users = userMapper.getAllUsers();
-        System.out.println(users);
+//        List<User> users = userMapper.getAllUsers();
+//        System.out.println(users);
+    }
+
+    @Test
+    public void test7(){
+        User u1 = cacheService.getUserById(1);
+//        cacheService.deleteUserById(1);
+        User user = new User();
+        user.setId(1);
+        user.setUserName("javaboy");
+        user.setAddress("shenzhen ");
+        cacheService.updateUserById(user);
+        User u2 = cacheService.getUserById(1);
+        System.out.println(u1);
+        System.out.println(u2);
     }
 }
